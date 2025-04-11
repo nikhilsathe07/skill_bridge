@@ -1,0 +1,73 @@
+.dashboard {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+  }
+  .dashboard h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  .dashboard h2 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+  }
+  .back-link {
+    display: inline-block;
+    margin-bottom: 20px;
+    color: #007bff;
+    text-decoration: none;
+  }
+  .back-link:hover {
+    text-decoration: underline;
+  }
+  .course-list {
+    list-style: none;
+  }
+  .course-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background: #fff;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  .course-details {
+    flex: 1;
+    margin-right: 20px;
+  }
+  .course-item h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+  }
+  .continue-link {
+    padding: 8px 15px;
+    background: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+  }
+  .continue-link:hover {
+    background: #0056b3;
+  }
+  .course-link {
+    color: #007bff;
+    text-decoration: underline;
+  }
+  .course-link:hover {
+    color: #0056b3;
+  }
+  .upload-link {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+  }
+  .upload-link:hover {
+    background: #0056b3;
+  }

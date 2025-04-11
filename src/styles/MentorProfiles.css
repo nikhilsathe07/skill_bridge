@@ -1,0 +1,24 @@
+.mentor-profiles {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+  }
+  .mentor-profiles h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  .back-link {
+    display: inline-block;
+    margin-bottom: 20px;
+    color: #007bff;
+    text-decoration: none;
+  }
+  .back-link:hover {
+    text-decoration: underline;
+  }
+  .mentor-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }

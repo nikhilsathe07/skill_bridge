@@ -1,0 +1,32 @@
+.mentor-card {
+    padding: 20px;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  .mentor-card h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+  .mentor-card .skills {
+    font-size: 1rem;
+    color: #007bff;
+    margin-bottom: 10px;
+  }
+  .mentor-card p {
+    font-size: 0.9rem;
+    color: #555;
+    margin-bottom: 15px;
+  }
+  .mentor-card button {
+    padding: 10px 20px;
+    background: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  .mentor-card button:hover {
+    background: #0056b3;
+  }

@@ -1,0 +1,28 @@
+.module-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background: #fff;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  .module-item h3 {
+    font-size: 1.2rem;
+  }
+  .module-item p {
+    font-size: 0.9rem;
+    color: #777;
+  }
+  .module-item button {
+    padding: 8px 15px;
+    background: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  .module-item button:hover {
+    background: #0056b3;
+  }

@@ -1,0 +1,74 @@
+.upload-work {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+  }
+  .upload-work h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  .back-link {
+    display: inline-block;
+    margin-bottom: 20px;
+    color: #007bff;
+    text-decoration: none;
+  }
+  .back-link:hover {
+    text-decoration: underline;
+  }
+  .upload-form {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  .form-group {
+    margin-bottom: 20px;
+  }
+  .form-group label {
+    display: block;
+    font-size: 1rem;
+    margin-bottom: 5px;
+    color: #333;
+  }
+  .form-group input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  .form-group input[type="file"] {
+    width: 100%;
+    padding: 10px 0;
+  }
+  .preview {
+    margin: 20px 0;
+    text-align: center;
+  }
+  .preview img,
+  .preview video {
+    max-width: 100%;
+    max-height: 300px;
+    border-radius: 5px;
+  }
+  .error {
+    color: red;
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+    text-align: center;
+  }
+  .upload-form button {
+    width: 100%;
+    padding: 12px;
+    background: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+  .upload-form button:hover {
+    background: #0056b3;
+  }
