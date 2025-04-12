@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import '../styles/Register.css';
 
 function Register() {
@@ -9,14 +9,37 @@ function Register() {
     password: '',
   });
 
+  const navigate = useNavigate();
+
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('Register:', formData.name, formData.email, formData.password);
-    alert('Registration submitted! (Mock)');
+
+    try {
+      const response = await fetch('https://skill-bridge-v89g.onrender.com/register', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        alert(data.message || 'Registration failed');
+        return;
+      }
+
+      alert('Registration successful!');
+      navigate('/login'); // Redirect to login after registration
+    } catch (error) {
+      console.error('Registration error:', error);
+      alert('An error occurred. Please try again.');
+    }
   };
 
   return (
@@ -24,50 +47,12 @@ function Register() {
       <div className="register-box">
         <h2>Register</h2>
         <form onSubmit={handleSubmit}>
-          <div className="form-group">
-            <label htmlFor="name">Name</label>
-            <input
-              type="text"
-              name="name"
-              value={formData.name}
-              onChange={handleChange}
-              placeholder="Enter your name"
-              required
-            />
-          </div>
-          <div className="form-group">
-            <label htmlFor="email">Email</label>
-            <input
-              type="email"
-              name="email"
-              value={formData.email}
-              onChange={handleChange}
-              placeholder="Enter your email"
-              required
-            />
-          </div>
-          <div className="form-group">
-            <label htmlFor="password">Password</label>
-            <input
-              type="password"
-              name="password"
-              value={formData.password}
-              onChange={handleChange}
-              placeholder="Enter your password"
-              required
-            />
-          </div>
+          <input type="text" name="name" value={formData.name} onChange={handleChange} placeholder="Name" required />
+          <input type="email" name="email" value={formData.email} onChange={handleChange} placeholder="Email" required />
+          <input type="password" name="password" value={formData.password} onChange={handleChange} placeholder="Password" required />
           <button type="submit">Register</button>
         </form>
-        <p>
-          Already have an account?{' '}
-          <Link to="/login" className="toggle-link">
-            Login
-          </Link>
-        </p>
-        <Link to="/" className="home-link">
-          Back to Home
-        </Link>
+        <p>Already have an account? <Link to="/login">Login</Link></p>
       </div>
     </div>
   );
