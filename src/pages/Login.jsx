@@ -12,10 +12,15 @@ function Login() {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('Login:', formData.email, formData.password);
-    alert('Login submitted! (Mock)');
+    if (isLogin) {
+      console.log('Login:', formData.email, formData.password);
+      alert('Login submitted! (Mock)');
+    } else {
+      console.log('Register:', formData.name, formData.email, formData.password);
+      alert('Registration submitted! (Mock)');
+    }
   };
 
   return (
