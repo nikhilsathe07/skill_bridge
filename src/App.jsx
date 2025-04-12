@@ -6,19 +6,23 @@ import MentorProfiles from './pages/MentorProfiles.jsx';
 import Dashboard from './pages/Dashboard.jsx';
 import UploadWork from './pages/UploadWork.jsx';
 import Forum from './pages/Forum.jsx';
+import Home from "./components/Home.jsx";
+import Navbar from "./components/Navbar.jsx";
+import BrowseCourses from "./components/courses.jsx";
 
 // Placeholders for your friend's pages
-function Home() {
-  return <h1>Home Page (Your friend is working on this)</h1>;
-}
-function BrowseCourses() {
-  return <h1>Browse Courses (Your friend is working on this)</h1>;
-}
+// function Home() {
+//   return <h1>Home Page (Your friend is working on this)</h1>;
+// }
+// function BrowseCourses() {
+//   return <h1>Browse Courses (Your friend is working on this)</h1>;
+// }
 
 function App() {
   return (
     <div>
-      <Header />
+      <Navbar/>
+      {/* <Header /> */}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/courses" element={<BrowseCourses />} />
