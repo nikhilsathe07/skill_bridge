@@ -18,11 +18,11 @@ const register = async (req, res) => {
             name,
             email,
             password:hashedPassword,
-            role
         })
         await newUser.save()
         res.status(201).json({msg:"User created successfully"});
-    } catch (error) {
+    // eslint-disable-next-line no-unused-vars
+    } catch (err) {
         res.status(500).json({message: "Internal server error"});
     }
 }
@@ -50,6 +50,7 @@ const login=async(req,res)=>{
             message:"Login successful",
             token
         })
+    // eslint-disable-next-line no-unused-vars
     }catch(err){
         res.status(500).json({message:"Internal server error"})
     }
