@@ -45,3 +45,13 @@
 .course>button:hover{
     background-color:rgb(103, 28, 124);
 }
+.addBtn{
+    background-color: transparent;
+    border: 2px solid rgb(103, 28, 124);
+    color: rgb(103, 28, 124);
+    padding: 10px 30px;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    margin-left:88%;
+    margin-top: 20px;
+}

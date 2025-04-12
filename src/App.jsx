@@ -10,6 +10,7 @@ import Home from "./components/Home.jsx";
 import Navbar from "./components/Navbar.jsx";
 import BrowseCourses from "./components/courses.jsx";
 import Register from './pages/Register.jsx';
+import AddCourse from './components/addCourse.jsx';
 
 // Placeholders for your friend's pages
 // function Home() {
@@ -34,6 +35,7 @@ function App() {
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/upload" element={<UploadWork />} />
         <Route path="/forum" element={<Forum />} />
+        <Route path='/addCourse' element={<AddCourse/>}/>
       </Routes>
     </div>
   );

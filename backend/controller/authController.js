@@ -4,6 +4,7 @@ import jwt from "jsonwebtoken";
 import "dotenv/config"
 
 const register = async (req, res) => {
+    console.log("7");
     const {name, email, password} = req.body;
     try {
         if (!name || !email || !password) {
@@ -45,7 +46,7 @@ const login=async(req,res)=>{
         if(!isMatch){
             return res.status(400).json({message:"Invalid credentials"})
         }
-        const token=jwt.sign({id:findUser._id,email:findUser.email},process.env.JWT_SECRET,{expiresIn:"1d"})
+        const token=jwt.sign({id:findUser._id,name:findUser.name,email:findUser.email},process.env.JWT_SECRET,{expiresIn:"1d"})
         
         res.status(200).json({
             message:"Login successful",
