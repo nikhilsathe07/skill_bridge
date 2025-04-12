@@ -25,7 +25,7 @@ export const addCourse=async(req,res)=>{
     try{
 
         const decoded=jwt.verify(token,process.env.JWT_SECRET)
-        const {email}=decoded
+        const {email,name}=decoded
         
         let url;
         if (req.file) {
@@ -36,6 +36,7 @@ export const addCourse=async(req,res)=>{
         }
         const newcourse=new course({
             admin:email,
+            name:name,
             courseName,
             imageUrl:url || "",
             courseDuration,
@@ -45,5 +46,14 @@ export const addCourse=async(req,res)=>{
         res.status(201).json({message:"course added sucessfully"})
     }catch(err){
         res.status(500).json({messgae:"error in internal server",error:err.message,})
+    }
+}
+
+export const getCourse=async(req,res)=>{
+    try{
+        const allCourses=await course.find().select("-email")
+        res.status(200).json({data:allCourses})
+    }catch(err){
+        res.status(500).json({message:"internal server error in get courses"})
     }
 }
