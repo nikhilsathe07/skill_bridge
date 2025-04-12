@@ -1,9 +1,10 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import '../styles/Login.css';
+import '../styles/Register.css';
 
-function Login() {
+function Register() {
   const [formData, setFormData] = useState({
+    name: '',
     email: '',
     password: '',
   });
@@ -14,15 +15,26 @@ function Login() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('Login:', formData.email, formData.password);
-    alert('Login submitted! (Mock)');
+    console.log('Register:', formData.name, formData.email, formData.password);
+    alert('Registration submitted! (Mock)');
   };
 
   return (
-    <div className="login-container">
-      <div className="login-box">
-        <h2>Login</h2>
+    <div className="register-container">
+      <div className="register-box">
+        <h2>Register</h2>
         <form onSubmit={handleSubmit}>
+          <div className="form-group">
+            <label htmlFor="name">Name</label>
+            <input
+              type="text"
+              name="name"
+              value={formData.name}
+              onChange={handleChange}
+              placeholder="Enter your name"
+              required
+            />
+          </div>
           <div className="form-group">
             <label htmlFor="email">Email</label>
             <input
@@ -45,12 +57,12 @@ function Login() {
               required
             />
           </div>
-          <button type="submit">Login</button>
+          <button type="submit">Register</button>
         </form>
         <p>
-          Don't have an account?{' '}
-          <Link to="/register" className="toggle-link">
-            Register
+          Already have an account?{' '}
+          <Link to="/login" className="toggle-link">
+            Login
           </Link>
         </p>
         <Link to="/" className="home-link">
@@ -61,4 +73,4 @@ function Login() {
   );
 }
 
-export default Login;
+export default Register;
