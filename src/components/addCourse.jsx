@@ -24,7 +24,7 @@ const AddCourse = () => {
     try {
       const token = localStorage.getItem('token');
 
-      const response = await fetch('http://localhost:2000/coursePost', {
+      const response = await fetch('https://skill-bridge-v89g.onrender.com/coursePost', {
         method: 'POST',
         headers: {
           Authorization: token // token in header
