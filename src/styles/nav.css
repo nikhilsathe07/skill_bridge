@@ -1,47 +1,61 @@
-.nav{
+.nav {
     display: flex;
     gap: 50px;
     padding: 10px 30px;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     background-color: rgb(86, 47, 94);
+     /* Added rounded corners */
 }
-.pages{
+
+.pages {
     margin-top: 13px;
     color: white;
     font-size: 20px;
     text-decoration: none;
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    transition: color 0.3s ease; /* Added smooth transition for hover effect */
 }
-.navlink{
+
+.navlink {
     padding: 0px 2%;
     display: flex;
     gap: 50px;
     margin-left: auto;
-    /* border: 1px solid green; */
 }
-.pages:hover{
+
+.pages:hover {
     color: rgb(193, 230, 255);
+    transform: scale(1.05); /* Slight scaling effect on hover */
 }
-.active{
+
+.active {
     color: rgb(193, 230, 255);
     text-decoration: underline;
+    font-weight: bold; /* Added bold effect to active page */
 }
-.logo{
+
+.logo {
     display: flex;
     gap: 10px;
-    /* border: 1px solid white; */
     width: auto;
 }
-.logo>p{
-    color: white;
-    font-size: 23px;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+.logo > p {
     color: rgb(231, 186, 171);
+    font-size: 23px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin-top: 10px;
     font-style: italic;
+    transition: color 0.3s ease; /* Smooth transition for color change */
 }
-.logo>img{
-    height:50px;
-    width:130px;
+
+.logo > img {
+    height: 50px;
+    width: 130px;
     border-radius: 20px;
+    transition: transform 0.3s ease; /* Added smooth transition for hover effect */
+}
+
+.logo > img:hover {
+    transform: rotate(15deg); /* Slight rotation on hover */
 }

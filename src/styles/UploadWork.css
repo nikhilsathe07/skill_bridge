@@ -1,74 +1,96 @@
 .upload-work {
-    max-width: 600px;
-    margin: 20px auto;
-    padding: 20px;
-  }
-  .upload-work h1 {
-    font-size: 2rem;
-    margin-bottom: 20px;
-    text-align: center;
-  }
-  .back-link {
-    display: inline-block;
-    margin-bottom: 20px;
-    color: #007bff;
-    text-decoration: none;
-  }
-  .back-link:hover {
-    text-decoration: underline;
-  }
-  .upload-form {
-    background: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  }
-  .form-group {
-    margin-bottom: 20px;
-  }
-  .form-group label {
-    display: block;
-    font-size: 1rem;
-    margin-bottom: 5px;
-    color: #333;
-  }
-  .form-group input[type="text"] {
-    width: 100%;
-    padding: 10px;
-    font-size: 1rem;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-  }
-  .form-group input[type="file"] {
-    width: 100%;
-    padding: 10px 0;
-  }
-  .preview {
-    margin: 20px 0;
-    text-align: center;
-  }
-  .preview img,
-  .preview video {
-    max-width: 100%;
-    max-height: 300px;
-    border-radius: 5px;
-  }
-  .error {
-    color: red;
-    font-size: 0.9rem;
-    margin-bottom: 15px;
-    text-align: center;
-  }
-  .upload-form button {
-    width: 100%;
-    padding: 12px;
-    background: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    font-size: 1rem;
-    cursor: pointer;
-  }
-  .upload-form button:hover {
-    background: #0056b3;
-  }
+  max-width: 600px;
+  margin: 2.5% auto;
+  padding: 30px 40px;
+}
+
+.upload-work h1 {
+  font-size: 26px;
+  margin-bottom: 20px;
+  text-align: center;
+  color: rgb(68, 20, 114);
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.back-link {
+  display: inline-block;
+  margin-bottom: 20px;
+  color: rgb(103, 28, 124);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.back-link:hover {
+  text-decoration: underline;
+}
+
+.upload-form {
+  background: #fff;
+  padding: 25px 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 1rem;
+  margin-bottom: 8px;
+  color: rgb(68, 20, 114);
+  text-decoration: underline;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.form-group input[type="text"],
+.form-group input[type="file"] {
+  width: 100%;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border: 1px solid rgb(54, 14, 65);
+  border-radius: 10px;
+  color: rgb(54, 14, 65);
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.preview {
+  margin: 20px 0;
+  text-align: center;
+}
+
+.preview img,
+.preview video {
+  max-width: 100%;
+  max-height: 300px;
+  border-radius: 8px;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 6px;
+}
+
+.error {
+  color: red;
+  font-size: 0.9rem;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.upload-form button {
+  width: 50%;
+  margin: 0 auto;
+  padding: 12px 20px;
+  background: rgb(54, 14, 65);
+  color: #fff;
+  border: 1px solid rgb(54, 14, 65);
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: background 0.3s ease;
+}
+
+.upload-form button:hover {
+  background: rgb(103, 28, 124);
+}

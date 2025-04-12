@@ -1,28 +1,35 @@
 .module-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px;
-    background: #fff;
-    margin-bottom: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-  }
-  .module-item h3 {
-    font-size: 1.2rem;
-  }
-  .module-item p {
-    font-size: 0.9rem;
-    color: #777;
-  }
-  .module-item button {
-    padding: 8px 15px;
-    background: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  .module-item button:hover {
-    background: #0056b3;
-  }
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  background: #f9f2ff; /* light violet background */
+  margin-bottom: 10px;
+  border: 1px solid #d6b3ff; /* subtle violet border */
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(138, 43, 226, 0.1); /* soft violet shadow */
+}
+
+.module-item h3 {
+  font-size: 1.2rem;
+  color: #4b0082; /* indigo/violet heading */
+}
+
+.module-item p {
+  font-size: 0.9rem;
+  color: #6a5acd; /* soft violet text */
+}
+
+.module-item button {
+  padding: 8px 15px;
+  background: #8a2be2; /* bright violet button */
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.module-item button:hover {
+  background: #6a1bbf; /* darker violet hover */
+}

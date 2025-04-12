@@ -1,49 +1,48 @@
 .header {
-    background: linear-gradient(to right, #00c6ff, #0072ff); /* Sky blue gradient */
-    color: #fff;
-    padding: 12px 24px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  .logo {
-    width: 140px;
-    height: auto;
-  }
-  
-  .header nav {
-    display: flex;
-    gap: 24px;
-  }
-  
-  .nav-link {
-    color: #fff;
-    text-decoration: none;
-    font-weight: 500;
-    font-size: 1rem;
-    transition: all 0.2s ease-in-out;
-    position: relative;
-  }
-  
-  .nav-link::after {
-    content: '';
-    display: block;
-    height: 2px;
-    width: 0%;
-    background: white;
-    transition: width 0.3s;
-    position: absolute;
-    bottom: -4px;
-    left: 0;
-  }
-  
-  .nav-link:hover::after {
-    width: 100%;
-  }
-  
-  .nav-link:hover {
-    color: #e0f0ff;
-  }
-  
+  background: linear-gradient(to right, #00c6ff, #0072ff); /* Sky blue gradient */
+  color: #fff;
+  padding: 12px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px; /* Added rounded corners */
+}
+
+.header nav {
+  display: flex;
+  gap: 24px;
+  align-items: center; /* Vertically align nav items */
+}
+
+.nav-link {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1rem;
+  transition: all 0.2s ease-in-out;
+  position: relative;
+  padding: 4px 8px; /* Added padding around nav links */
+  border-radius: 4px; /* Rounded corners for nav links */
+}
+
+.nav-link::after {
+  content: '';
+  display: block;
+  height: 2px;
+  width: 0%;
+  background: white;
+  transition: width 0.3s;
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+.nav-link:hover {
+  color: #e0f0ff;
+  background: rgba(255, 255, 255, 0.1); /* Light background on hover */
+}
