@@ -11,43 +11,53 @@ v2.config({
     api_secret: process.env.CLOUDINARY_API_SECRET,
   });
   
-export const addCourse=async(req,res)=>{
-    console.log("addcourse");
-    const {courseName,courseDuration,description}=req.body
-    const token=req.headers.authorization
-    if(!token){
-        return res.status(401).json({message:"token needed"})
+  export const addCourse = async (req, res) => {
+    const { courseName, courseDuration, description } = req.body;
+  
+    const rawToken = req.headers.authorization;
+    if (!rawToken) {
+      return res.status(401).json({ message: "Token needed" });
     }
+  
+    const token = rawToken// Bearer token
+  
     let filePath;
-    if(req.file){
-        filePath=req.file.path
+    if (req.file) {
+      filePath = req.file.path;
     }
-    try{
-
-        const decoded=jwt.verify(token,process.env.JWT_SECRET)
-        const {email,name}=decoded
-        
-        let url;
-        if (req.file) {
-            // Upload the new photo to Cloudinary if provided
-            const uploadResponse = await v2.uploader.upload(filePath);
-            url = uploadResponse.secure_url;
-            fs.unlinkSync(filePath)
-        }
-        const newcourse=new course({
-            admin:email,
-            name:name,
-            courseName,
-            imageUrl:url || "",
-            courseDuration,
-            description
-        })
-        await newcourse.save()
-        res.status(201).json({message:"course added sucessfully"})
-    }catch(err){
-        res.status(500).json({messgae:"error in internal server",error:err.message,})
+  
+    try {
+      const decoded = jwt.verify(token, process.env.JWT_SECRET);
+      const { email, name } = decoded;
+  
+      let url = "";
+      if (req.file) {
+        const uploadResponse = await v2.uploader.upload(filePath);
+        url = uploadResponse.secure_url;
+        fs.unlinkSync(filePath); // remove local file after upload
+      }
+  
+      const newCourse = new course({
+        admin: email,
+        name: name,
+        courseName,
+        imageUrl: url,
+        courseDuration,
+        description,
+      });
+  
+      await newCourse.save();
+  
+      res.status(201).json({ message: "Course added successfully" });
+    } catch (err) {
+      console.error("Add Course Error:", err.message);
+      res.status(500).json({
+        message: "Error in internal server",
+        error: err.message,
+      });
     }
-}
+  };
+  
 
 export const getCourse=async(req,res)=>{
     try{
