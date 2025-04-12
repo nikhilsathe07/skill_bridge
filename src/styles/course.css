@@ -55,3 +55,27 @@
     margin-left:88%;
     margin-top: 20px;
 }
+.addBtn:hover{
+    background-color:rgb(243, 200, 255);
+}
+.courseHead{
+    text-align: center;
+    font-size: 40px;
+    color: rgb(68, 20, 114);
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+.course-container{
+    margin-top: 30px;
+}
+.course-list{
+    /* margin:30px; */
+    width: 80%;
+    margin: 4% 12%;
+}
+.course-item{
+    border: none;
+}
+.course-item:hover{
+    background-color:rgb(247, 216, 255);
+    cursor: pointer;
+}
