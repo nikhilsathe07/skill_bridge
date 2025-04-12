@@ -14,13 +14,48 @@ function Login() {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    console.log('Form submitted');
+
     if (isLogin) {
-      console.log('Login:', formData.email, formData.password);
-      alert('Login submitted! (Mock)');
+      console.log('Logging in with:', formData.email, formData.password);
+
+      try {
+        const response = await fetch('https://skill-bridge-v89g.onrender.com/login', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            email: formData.email,
+            password: formData.password,
+          }),
+        });
+
+        console.log('Login request sent');
+        const data = await response.json();
+        console.log('Response received:', data);
+
+        if (!response.ok) {
+          alert(data.message || 'Login failed');
+          return;
+        }
+
+        alert('Login successful!');
+        localStorage.setItem('token', data.token);
+        console.log('Token saved to localStorage:', data.token);
+
+        // Redirect or navigate here if needed
+        // navigate('/dashboard');
+
+      } catch (error) {
+        console.error('Login error:', error);
+        alert('An error occurred. Please try again later.');
+      }
     } else {
-      console.log('Register:', formData.name, formData.email, formData.password);
+      // Mock registration
+      console.log('Register (mock):', formData.name, formData.email, formData.password);
       alert('Registration submitted! (Mock)');
     }
   };

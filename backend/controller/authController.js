@@ -28,6 +28,7 @@ const register = async (req, res) => {
 }
 
 const login=async(req,res)=>{
+    console.log("login achieved");
     const {email,password}=req.body
     try{
       
