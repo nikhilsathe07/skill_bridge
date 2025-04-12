@@ -3,12 +3,13 @@ import { Link } from 'react-router-dom';
 import '../styles/Login.css';
 
 function Login() {
-  const [isLogin, setIsLogin] = useState(true);
   const [formData, setFormData] = useState({
+    name: '',
     email: '',
     password: '',
-    name: '',
   });
+
+  const [isLogin, setIsLogin] = useState(true); // toggle between Login & Register
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -16,7 +17,6 @@ function Login() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('Form submitted');
 
     if (isLogin) {
       console.log('Logging in with:', formData.email, formData.password);
@@ -33,9 +33,7 @@ function Login() {
           }),
         });
 
-        console.log('Login request sent');
         const data = await response.json();
-        console.log('Response received:', data);
 
         if (!response.ok) {
           alert(data.message || 'Login failed');
@@ -44,17 +42,13 @@ function Login() {
 
         alert('Login successful!');
         localStorage.setItem('token', data.token);
-        console.log('Token saved to localStorage:', data.token);
-
-        // Redirect or navigate here if needed
-        // navigate('/dashboard');
-
+        // Redirect here if needed
       } catch (error) {
         console.error('Login error:', error);
         alert('An error occurred. Please try again later.');
       }
     } else {
-      // Mock registration
+      // Registration mock
       console.log('Register (mock):', formData.name, formData.email, formData.password);
       alert('Registration submitted! (Mock)');
     }
@@ -71,10 +65,10 @@ function Login() {
               <input
                 type="text"
                 name="name"
+                id="name"
                 value={formData.name}
                 onChange={handleChange}
-                placeholder="Enter your name"
-                required={!isLogin}
+                required
               />
             </div>
           )}
@@ -83,9 +77,9 @@ function Login() {
             <input
               type="email"
               name="email"
+              id="email"
               value={formData.email}
               onChange={handleChange}
-              placeholder="Enter your email"
               required
             />
           </div>
@@ -94,23 +88,21 @@ function Login() {
             <input
               type="password"
               name="password"
+              id="password"
               value={formData.password}
               onChange={handleChange}
-              placeholder="Enter your password"
               required
             />
           </div>
           <button type="submit">{isLogin ? 'Login' : 'Register'}</button>
         </form>
-        <p>
+
+        <p className="toggle-link">
           {isLogin ? "Don't have an account?" : 'Already have an account?'}{' '}
-          <span className="toggle-link" onClick={() => setIsLogin(!isLogin)}>
-            {isLogin ? 'Register' : 'Login'}
+          <span onClick={() => setIsLogin(!isLogin)}>
+            {isLogin ? 'Register here' : 'Login here'}
           </span>
         </p>
-        <Link to="/" className="home-link">
-          Back to Home
-        </Link>
       </div>
     </div>
   );

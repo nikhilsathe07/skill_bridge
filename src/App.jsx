@@ -9,6 +9,7 @@ import Forum from './pages/Forum.jsx';
 import Home from "./components/Home.jsx";
 import Navbar from "./components/Navbar.jsx";
 import BrowseCourses from "./components/courses.jsx";
+import Register from './pages/Register.jsx';
 
 // Placeholders for your friend's pages
 // function Home() {
@@ -28,6 +29,7 @@ function App() {
         <Route path="/courses" element={<BrowseCourses />} />
         <Route path="/course/:id" element={<CourseDetail />} />
         <Route path="/login" element={<Login />} />
+        <Route path='/register' element={<Register/>}/>
         <Route path="/mentors" element={<MentorProfiles />} />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/upload" element={<UploadWork />} />
